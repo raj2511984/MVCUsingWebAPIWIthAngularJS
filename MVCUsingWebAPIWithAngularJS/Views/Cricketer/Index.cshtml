@@ -1,0 +1,90 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ODI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ODI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Test)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+</table>*@
+
+@Html.Action("GetHtmlPage", "Cricketer", new { path = "~/Angular/Controller/CricketerView.html" })
+
+@*<style>
+    table, tr, td, th {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+@section scripts
+       {
+    <script>
+           $(document).ready(function () {
+               $.ajax(
+                   {
+                       type: 'GET',
+                       dataType: 'json',
+                       contentType: 'application/json;charset=utf-8',
+                       url: 'http://localhost:63366/api/cricketer/getcricketers',
+                       success: function (data) {
+                           try {                               
+                               var html = '<table><thead><th>Name</th><th>Total ODI</th><th>Total Test</th></thead><tbody>';
+                               $.each(data, function (key, val) {                                   
+                                   html += '<tr><td>'
+                                       + '<a ' + 'href="mailto:' +
+                                       val.Id + '">' + val.Name + '</a>' +
+                                   '</td><td>' + val.ODI +'</td><td>' + val.Test + '</td></tr>';
+                               });
+                               html += '</tbody></table>';
+                               $('#myGrid').html(html);
+                           } catch (e) {
+                               console.log('Error while formatting the data : ' + e.message)
+                           }
+                       },
+                       error: function (xhrequest, error, thrownError) {
+                           console.log('Error while ajax call: ' + error)
+                       }
+                   }
+                   );
+           });
+    </script>
+    }
+<div id="myGrid"></div>*@

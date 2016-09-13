@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Overall Stats</title><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        <h4>Overall Stats</h4>
+        <hr />
+        <div ng-app="cricketerapp" ng-controller="CricketerController">
+            <div class="row" ng-show="displayMessage">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+            <div class="dataTable_wrapper">                
+                <table class="table table-striped table-bordered table-hover table-condensed table-responsive cell-border appointments" id="dataTables-Schedule">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Team
+                        </th>
+                        <th>
+                            ODI Runs
+                        </th>
+                        <th>
+                            Test Runs
+                        </th>
+                        <th>
+                            Wickets
+                        </th>                      
+                    </tr>
+                    <tr>                        
+                        <td>{{detail.Cricketer_Id}}</td>
+                        <td>{{detail.Team}}</td>
+                        <td>{{detail.ODI_Runs}}</td>
+                        <td>{{detail.Test_Runs}}</td>
+                        <td>{{detail.Wickets}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4>ODI Stats</h4>
+        <hr />
+        <div ng-app="cricketerapp" ng-controller="CricketerController">
+            <div class="row" ng-show="displayMessage">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover table-condensed table-responsive cell-border appointments" id="dataTables-Schedule">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Half Century
+                        </th>
+                        <th>
+                            Century
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>{{ODIStats.Cricketer_Id}}</td>
+                        <td>{{ODIStats.Name}}</td>
+                        <td>{{ODIStats.Half_Century}}</td>
+                        <td>{{ODIStats.Century}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4>Test Stats</h4>
+        <hr />
+        <div ng-app="cricketerapp" ng-controller="CricketerController">
+            <div class="row" ng-show="displayMessage">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{message}}
+                    </div>
+                </div>
+            </div>
+            <div class="dataTable_wrapper">
+                <table class="table table-striped table-bordered table-hover table-condensed table-responsive cell-border appointments" id="dataTables-Schedule">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Half Century
+                        </th>
+                        <th>
+                            Century
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>{{TestStats.Cricketer_Id}}</td>
+                        <td>{{TestStats.Name}}</td>
+                        <td>{{TestStats.Half_Century}}</td>
+                        <td>{{TestStats.Century}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
